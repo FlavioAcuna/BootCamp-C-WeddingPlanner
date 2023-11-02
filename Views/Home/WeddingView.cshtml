@@ -1,0 +1,19 @@
+@model Wedding
+@await Html.PartialAsync("Partials/_Navbar")
+<div class="container">
+    <div class="row">
+        <h1 class="display-4">Boda de @Model.WedderOne & @Model.WedderTwo </h1>
+    </div>
+    <div class="row">
+        <h4>Fecha: @Model.WeddingDate</h4>
+    </div>
+    <div class="row w-25">
+        <h4>Invitados:</h4>
+        <ul class="list-group d-flex-2">
+            @foreach (var guest in Model.GuestWedding)
+            {
+                <li class="list-group-item ">@guest.UserGu.Nombre @guest.UserGu.Apellido</li>
+            }
+        </ul>
+    </div>
+</div>
